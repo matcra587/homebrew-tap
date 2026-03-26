@@ -1,3 +1,7 @@
+# TODO: Remove the style-fix steps once GoReleaser ships a release
+# with the cask stanza order fix (goreleaser/goreleaser#6466).
+# The sub-templates still emit `url` before `sha256`, which
+# violates the Homebrew Cask Cookbook stanza order.
 name: brew test-bot
 
 on:
@@ -22,7 +26,7 @@ jobs:
     permissions:
       actions: read # Required by test-bot to check workflow run status.
       checks: read # Required by test-bot to read check results.
-      contents: read # Required to check out the repository.
+      contents: write # Required to check out the repository and push style fixes.
       pull-requests: read # Required by test-bot to read PR metadata.
     steps:
       - name: Set up Homebrew
@@ -38,6 +42,9 @@ jobs:
           key: ${{ matrix.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
           restore-keys: ${{ matrix.os }}-rubygems-
 
+      - name: Fix cask style
+        run: brew style --fix "$GITHUB_REPOSITORY" || true
+
       - run: brew test-bot --only-cleanup-before
 
       - run: brew test-bot --only-setup
@@ -52,3 +59,23 @@ jobs:
         with:
           name: bottles_${{ matrix.os }}
           path: '*.bottle.*'
+
+      - name: Set up git
+        if: >-
+          github.event_name == 'push'
+          && matrix.os == 'ubuntu-latest'
+          && github.event.head_commit.author.email == 'bot@goreleaser.com'
+        uses: Homebrew/actions/git-user-config@4ebd32341e5b59ae7e1581111aa99d5d34cef962 # main
+
+      - name: Commit and push style fix
+        if: >-
+          github.event_name == 'push'
+          && matrix.os == 'ubuntu-latest'
+          && github.event.head_commit.author.email == 'bot@goreleaser.com'
+        working-directory: ${{ steps.set-up-homebrew.outputs.repository-path }}
+        run: |
+          if ! git diff --quiet; then
+            git add Casks/
+            git commit -m "Fix cask stanza order"
+            git push -u origin main
+          fi
