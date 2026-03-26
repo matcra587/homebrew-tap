@@ -4,23 +4,23 @@ cask "pagerduty-client" do
 
   on_macos do
     on_intel do
-      url "https://github.com/matcra587/pagerduty-client/releases/download/v#{version}/pagerduty-client_#{version}_darwin_amd64.tar.gz"
       sha256 "e579ef227567f0362a560b71eeed7fc0d5f5061bb724fec5e6a3cbc0dced1429"
+      url "https://github.com/matcra587/pagerduty-client/releases/download/v#{version}/pagerduty-client_#{version}_darwin_amd64.tar.gz"
     end
     on_arm do
-      url "https://github.com/matcra587/pagerduty-client/releases/download/v#{version}/pagerduty-client_#{version}_darwin_arm64.tar.gz"
       sha256 "086de69366db3de8adcba23254f3a44d8379bcf9e352b1e123df7e5705ca061b"
+      url "https://github.com/matcra587/pagerduty-client/releases/download/v#{version}/pagerduty-client_#{version}_darwin_arm64.tar.gz"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/matcra587/pagerduty-client/releases/download/v#{version}/pagerduty-client_#{version}_linux_amd64.tar.gz"
       sha256 "7c6c9816cb37290a80f7a594c099b1c9cc054d77c46a5e77a19151ad09e1f44d"
+      url "https://github.com/matcra587/pagerduty-client/releases/download/v#{version}/pagerduty-client_#{version}_linux_amd64.tar.gz"
     end
     on_arm do
-      url "https://github.com/matcra587/pagerduty-client/releases/download/v#{version}/pagerduty-client_#{version}_linux_arm64.tar.gz"
       sha256 "4411537ed95a40b4f461c9b30aa08461cc4d737651f30332c212a9ee457a8328"
+      url "https://github.com/matcra587/pagerduty-client/releases/download/v#{version}/pagerduty-client_#{version}_linux_arm64.tar.gz"
     end
   end
 
@@ -35,5 +35,4 @@ cask "pagerduty-client" do
   binary "pagerduty-client"
 
   # No zap stanza required
-
 end

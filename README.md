@@ -1,16 +1,22 @@
 # Matcra587 Tap
 
-## How do I install these formulae?
+## Available casks
 
-`brew install matcra587/tap/<formula>`
+- `pagerduty-client` - PagerDuty CLI client and TUI dashboard
 
-Or `brew tap matcra587/tap` and then `brew install <formula>`.
+## Installation
+
+```sh
+brew install matcra587/tap/pagerduty-client
+```
+
+Or `brew tap matcra587/tap` and then `brew install --cask pagerduty-client`.
 
 Or, in a `brew bundle` `Brewfile`:
 
 ```ruby
 tap "matcra587/tap"
-brew "<formula>"
+cask "pagerduty-client"
 ```
 
 ## Documentation

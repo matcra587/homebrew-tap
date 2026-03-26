@@ -6,26 +6,33 @@ on:
       - main
   pull_request:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions: {}
+
 jobs:
   test-bot:
+    name: Test bot (${{ matrix.os }})
     strategy:
       matrix:
         os: [ ubuntu-22.04, macos-15-intel, macos-26 ]
     runs-on: ${{ matrix.os }}
     permissions:
-      actions: read
-      checks: read
-      contents: read
-      pull-requests: read
+      actions: read # Required by test-bot to check workflow run status.
+      checks: read # Required by test-bot to read check results.
+      contents: read # Required to check out the repository.
+      pull-requests: read # Required by test-bot to read PR metadata.
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@main
+        uses: Homebrew/actions/setup-homebrew@4ebd32341e5b59ae7e1581111aa99d5d34cef962 # main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Cache Homebrew Bundler RubyGems
-        uses: actions/cache@v4
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: ${{ steps.set-up-homebrew.outputs.gems-path }}
           key: ${{ matrix.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
@@ -41,7 +48,7 @@ jobs:
 
       - name: Upload bottles as artifact
         if: always() && github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
           name: bottles_${{ matrix.os }}
           path: '*.bottle.*'
