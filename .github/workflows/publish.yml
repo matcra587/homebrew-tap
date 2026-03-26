@@ -17,7 +17,7 @@ jobs:
   pr-pull:
     name: Pull bottles
     if: contains(github.event.pull_request.labels.*.name, 'pr-pull')
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     permissions:
       actions: read # Required by pr-pull to check workflow run status.
       checks: read # Required by pr-pull to verify check results.

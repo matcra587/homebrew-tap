@@ -17,7 +17,7 @@ jobs:
     name: Test bot (${{ matrix.os }})
     strategy:
       matrix:
-        os: [ ubuntu-22.04, macos-15-intel, macos-26 ]
+        os: [ ubuntu-latest, macos-26 ]
     runs-on: ${{ matrix.os }}
     permissions:
       actions: read # Required by test-bot to check workflow run status.
