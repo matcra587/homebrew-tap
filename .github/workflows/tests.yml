@@ -26,7 +26,7 @@ jobs:
     permissions:
       actions: read # Required by test-bot to check workflow run status.
       checks: read # Required by test-bot to read check results.
-      contents: write # Required to check out the repository and push style fixes.
+      contents: write # Required to check out the repository and commit style fixes.
       pull-requests: read # Required by test-bot to read PR metadata.
     steps:
       - name: Set up Homebrew
@@ -60,22 +60,55 @@ jobs:
           name: bottles_${{ matrix.os }}
           path: '*.bottle.*'
 
-      - name: Set up git
+      - name: Create verified style-fix commit
         if: >-
           github.event_name == 'push'
           && matrix.os == 'ubuntu-latest'
           && github.event.head_commit.author.email == 'bot@goreleaser.com'
-        uses: Homebrew/actions/git-user-config@4ebd32341e5b59ae7e1581111aa99d5d34cef962 # main
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7.1.0
+        env:
+          REPO_PATH: ${{ steps.set-up-homebrew.outputs.repository-path }}
+        with:
+          script: |
+            const { execSync } = require('child_process');
+            const fs = require('fs');
+            const path = require('path');
 
-      - name: Commit and push style fix
-        if: >-
-          github.event_name == 'push'
-          && matrix.os == 'ubuntu-latest'
-          && github.event.head_commit.author.email == 'bot@goreleaser.com'
-        working-directory: ${{ steps.set-up-homebrew.outputs.repository-path }}
-        run: |
-          if ! git diff --quiet; then
-            git add Casks/
-            git commit -m "Fix cask stanza order"
-            git push -u origin main
-          fi
+            const repoPath = process.env.REPO_PATH;
+            const diff = execSync('git diff --name-only', { cwd: repoPath })
+              .toString().trim();
+
+            if (!diff) {
+              core.info('No style changes needed.');
+              return;
+            }
+
+            const commitMessage = [
+              'style: fix cask stanza order',
+              '',
+              'Workaround for goreleaser/goreleaser#6466 - GoReleaser',
+              'sub-templates emit url before sha256, violating the',
+              'Homebrew Cask Cookbook stanza order.',
+            ].join('\n');
+
+            for (const file of diff.split('\n')) {
+              const { data: { sha: fileSha } } = await github.rest.repos.getContent({
+                ...context.repo,
+                path: file,
+                ref: 'main',
+              });
+
+              const content = fs.readFileSync(path.join(repoPath, file))
+                .toString('base64');
+
+              await github.rest.repos.createOrUpdateFileContents({
+                ...context.repo,
+                path: file,
+                message: commitMessage,
+                content,
+                sha: fileSha,
+                branch: 'main',
+              });
+
+              core.info(`Updated ${file}`);
+            }
