@@ -1,8 +1,10 @@
 ---
-name: ci
+name: actions
 
 on:
   pull_request:
+    paths:
+      - '.github/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
