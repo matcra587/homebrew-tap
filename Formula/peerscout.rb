@@ -1,7 +1,7 @@
 class Peerscout < Formula
   desc "Fetch live peers for Cosmos SDK chains"
   homepage "https://github.com/matcra587/peerscout"
-  version "0.4.0"
+  version "0.4.1"
   license "MIT"
 
   livecheck do
@@ -17,18 +17,18 @@ class Peerscout < Formula
   on_macos do
     on_arm do
       url "https://github.com/matcra587/peerscout/releases/download/v#{version}/peerscout_#{version}_darwin_arm64.tar.gz"
-      sha256 "8b00c969cfe6519c808f9c781466252ec959c9258b873d392e8892a1f53ed189"
+      sha256 "16297728580c674a7ef806bd1fd2a2cce3b0527ada00677a8f7545a87572c344"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/matcra587/peerscout/releases/download/v#{version}/peerscout_#{version}_linux_amd64.tar.gz"
-      sha256 "99309380e27fb82c3ea0ff8c5c8443601abbff735cb192045ce519571de2f33e"
+      sha256 "787f41471274639f943b72a5f81e7f8a92784225bd62a3afc21f34e9c8789a96"
     end
     on_arm do
       url "https://github.com/matcra587/peerscout/releases/download/v#{version}/peerscout_#{version}_linux_arm64.tar.gz"
-      sha256 "85335dc22148554ced1c802bd14497938a32c2f757b8d1aac20a8d6a1cbe8971"
+      sha256 "ee0592d7d270c67f693584f3bea7158892d168666b4cac941a04a95faae04952"
     end
   end
 
