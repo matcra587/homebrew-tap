@@ -1,7 +1,7 @@
 class PagerdutyClient < Formula
   desc "PagerDuty CLI client and TUI dashboard"
   homepage "https://github.com/matcra587/pagerduty-client"
-  version "0.12.2"
+  version "0.13.0"
   license "MIT"
 
   livecheck do
@@ -17,18 +17,18 @@ class PagerdutyClient < Formula
   on_macos do
     on_arm do
       url "https://github.com/matcra587/pagerduty-client/releases/download/v#{version}/pagerduty-client_#{version}_darwin_arm64.tar.gz"
-      sha256 "53ec7161ea3e4e2c797750f7d2d0d2ad4ed6ff2a49f0bd36eeeac27f8ead543c"
+      sha256 "6023cda8a8ecf49481f85b94ee3019cddbd77a36ef363f3420691d42737827a8"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/matcra587/pagerduty-client/releases/download/v#{version}/pagerduty-client_#{version}_linux_amd64.tar.gz"
-      sha256 "8d5820204bcc45bb085b58c443ba741f7328e821b8be99a7b7ed3b0fbb290dd8"
+      sha256 "a977638b32beadd0db2cbf063a1f001d55c422b4853d09c7e26c23eb1aea2d77"
     end
     on_arm do
       url "https://github.com/matcra587/pagerduty-client/releases/download/v#{version}/pagerduty-client_#{version}_linux_arm64.tar.gz"
-      sha256 "1757ee516dd2b93775f3cfdf6ba891ed4c80c2e77d0d61fbd7036bc4092f4782"
+      sha256 "10878e8678f24d3d1c40d2bc3ca732e5cddf3e81bfb1a6b69fb56f8ccc24b935"
     end
   end
 
