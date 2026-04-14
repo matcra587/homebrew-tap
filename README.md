@@ -6,7 +6,7 @@ Homebrew tap for personal CLI tools.
 
 | Formula | Version | Description |
 |---------|---------|-------------|
-| `pagerduty-client` | 0.13.0 | PagerDuty CLI client and TUI dashboard |
+| `pagerduty-client` | 0.13.1 | PagerDuty CLI client and TUI dashboard |
 | `peerscout` | 0.1.1 | Fetch live peers for Cosmos SDK chains |
 
 ## Install
