@@ -4,33 +4,34 @@ Homebrew tap for personal CLI tools.
 
 ## Formulae
 
-| Formula | Version | Description |
-|---------|---------|-------------|
-| `pagerduty-client` | 0.13.1 | PagerDuty CLI client and TUI dashboard |
-| `peerscout` | 0.1.1 | Fetch live peers for Cosmos SDK chains |
+| Formula | Description |
+|---------|-------------|
+| `pagerduty-client` | PagerDuty API client and CLI |
+| `peerscout` | Fetch live peers for Cosmos SDK chains |
+| `slick` | Headless Slack CLI for agents, scripts, and CI jobs |
 
 ## Install
 
 ```bash
-brew install matcra587/tap/pagerduty-client
+brew install matcra587/tap/<formula>
 ```
 
 Or tap first:
 
 ```bash
 brew tap matcra587/tap
-brew install pagerduty-client
+brew install <formula>
 ```
 
-### HEAD (build from source)
+Build from source:
 
 ```bash
-brew install --HEAD matcra587/tap/pagerduty-client
+brew install --HEAD matcra587/tap/<formula>
 ```
 
 ## Brewfile
 
 ```ruby
 tap "matcra587/tap"
-brew "pagerduty-client"
+brew "<formula>"
 ```
