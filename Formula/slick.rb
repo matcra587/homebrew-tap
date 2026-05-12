@@ -1,7 +1,7 @@
 class Slick < Formula
   desc "Headless Slack CLI for agents, scripts, and CI jobs"
   homepage "https://github.com/matcra587/slack-cli"
-  version "0.5.5"
+  version "0.5.6"
   license "MIT"
 
   livecheck do
@@ -17,18 +17,18 @@ class Slick < Formula
   on_macos do
     on_arm do
       url "https://github.com/matcra587/slack-cli/releases/download/v#{version}/slick_#{version}_darwin_arm64.tar.gz"
-      sha256 "d5e365d109d914192db0f0f6fc58714a89dd44e115a5d467d41cf20d5d762da2"
+      sha256 "cda6092110fbfc7524b23e7f0f117ad86d7f87b8e30dd37b44a5814a79f2af14"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/matcra587/slack-cli/releases/download/v#{version}/slick_#{version}_linux_amd64.tar.gz"
-      sha256 "869369a530419853da25a16b5fa7c8911959cdd36f9b7e7fb45280dffede51ad"
+      sha256 "8da43b6ec8db0d5e8af5ccb4bdda24facb0718f91c1277b1bd44e78ca8fc361b"
     end
     on_arm do
       url "https://github.com/matcra587/slack-cli/releases/download/v#{version}/slick_#{version}_linux_arm64.tar.gz"
-      sha256 "7d6ddee9ace71b62272c50b08d6feb9a1e71741741d1d478523a6a31a6faf1a9"
+      sha256 "2d6de6f22d3e77d4bd38328b69460d9d34cc21c836e83064264efbba4ec381aa"
     end
   end
 
