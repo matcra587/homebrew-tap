@@ -1,4 +1,4 @@
-class SlackCli < Formula
+class Slick < Formula
   desc "Headless Slack CLI for agents, scripts, and CI jobs"
   homepage "https://github.com/matcra587/slack-cli"
   version "0.4.0"
