@@ -1,7 +1,7 @@
 class Jira < Formula
   desc "Agent-first Jira CLI for developer workflows"
   homepage "https://github.com/matcra587/jira-cli"
-  version "0.11.2"
+  version "0.12.0"
   license "MIT"
 
   livecheck do
@@ -17,18 +17,18 @@ class Jira < Formula
   on_macos do
     on_arm do
       url "https://github.com/matcra587/jira-cli/releases/download/v#{version}/jira_#{version}_darwin_arm64.tar.gz"
-      sha256 "22366f3db09e6150b4ec0be601bb933c6626f8a352a1ebee19b94e0dc38df2c5"
+      sha256 "cd86ad2dfc32e0f8fe6babfd9c3d1964c18a8692d9d9ea715461e8bc16ae8280"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/matcra587/jira-cli/releases/download/v#{version}/jira_#{version}_linux_amd64.tar.gz"
-      sha256 "63fe20ec844d164dd768810052975c110301062812bdc5ea016d1d2f0c0e0f17"
+      sha256 "3dc4160887e9fdf7e5038cf9f78d442d673babacf9086c1a784fc86533f19d4f"
     end
     on_arm do
       url "https://github.com/matcra587/jira-cli/releases/download/v#{version}/jira_#{version}_linux_arm64.tar.gz"
-      sha256 "6bc6d780be524c99faca5e83f1e32112bed41caf91b6fc4cea5d420b28110d86"
+      sha256 "a5ad0aa5da51cee6e8cbb2a952c8f3860f010759b23850efd5607e6bcfd78760"
     end
   end
 
