@@ -1,7 +1,6 @@
 class PagerdutyClient < Formula
   desc "PagerDuty API client and CLI"
   homepage "https://github.com/matcra587/pagerduty-client"
-  version "0.13.5"
   license "MIT"
 
   livecheck do
@@ -16,18 +15,18 @@ class PagerdutyClient < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/matcra587/pagerduty-client/releases/download/v#{version}/pagerduty-client_#{version}_darwin_arm64.tar.gz"
+      url "https://github.com/matcra587/pagerduty-client/releases/download/v0.13.5/pagerduty-client_0.13.5_darwin_arm64.tar.gz"
       sha256 "dd1b5b5afb1dcc569372b68c95fc7a6d283d4fa0f742beb7c31889660af1a88b"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/matcra587/pagerduty-client/releases/download/v#{version}/pagerduty-client_#{version}_linux_amd64.tar.gz"
+      url "https://github.com/matcra587/pagerduty-client/releases/download/v0.13.5/pagerduty-client_0.13.5_linux_amd64.tar.gz"
       sha256 "2b43fd2afe7b49f7040764b4d7c7d499e8eb866c383f8dc420dacf2988be61ac"
     end
     on_arm do
-      url "https://github.com/matcra587/pagerduty-client/releases/download/v#{version}/pagerduty-client_#{version}_linux_arm64.tar.gz"
+      url "https://github.com/matcra587/pagerduty-client/releases/download/v0.13.5/pagerduty-client_0.13.5_linux_arm64.tar.gz"
       sha256 "2ae91e8c0387d2d47c7bf46da740c6692dd62a4a66a1009d3d5874811f355978"
     end
   end
