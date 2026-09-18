@@ -6,6 +6,7 @@ Homebrew tap for personal CLI tools.
 
 | Formula | Description |
 |---------|-------------|
+| `github-docs-mcp` | Read-only MCP server for GitHub documentation |
 | `pagerduty-client` | PagerDuty API client and CLI |
 | `peerscout` | Fetch live peers for Cosmos SDK chains |
 | `slick` | Headless Slack CLI for agents, scripts, and CI jobs |
