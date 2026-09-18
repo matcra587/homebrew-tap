@@ -53,6 +53,6 @@ class Jira < Formula
   end
 
   test do
-    assert_match "Jira CLI", shell_output("#{bin}/jira --help")
+    assert_match version.to_s, shell_output("#{bin}/jira version")
   end
 end
