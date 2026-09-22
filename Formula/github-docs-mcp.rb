@@ -15,19 +15,19 @@ class GithubDocsMcp < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/matcra587/github-docs-mcp/releases/download/v0.2.1/github-docs-mcp_0.2.1_darwin_arm64.tar.gz"
-      sha256 "36ecd28ee7b09695fdac720550f2f3ad931cd83a5e483da1e35b6fa5ff37cafd"
+      url "https://github.com/matcra587/github-docs-mcp/releases/download/v0.2.2/github-docs-mcp_0.2.2_darwin_arm64.tar.gz"
+      sha256 "649689be3e07c1d7870b7a8c1d5eaf0cc6d1175293fa44f5c0b75b8810a914fd"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/matcra587/github-docs-mcp/releases/download/v0.2.1/github-docs-mcp_0.2.1_linux_amd64.tar.gz"
-      sha256 "0c3690109cc387a5a70768467c477b35777ec694deda943c44d60d553979f76d"
+      url "https://github.com/matcra587/github-docs-mcp/releases/download/v0.2.2/github-docs-mcp_0.2.2_linux_amd64.tar.gz"
+      sha256 "7f35d7d4844452e93840866e6cdbcaa62dc480eae78cab895e05f8342817140f"
     end
     on_arm do
-      url "https://github.com/matcra587/github-docs-mcp/releases/download/v0.2.1/github-docs-mcp_0.2.1_linux_arm64.tar.gz"
-      sha256 "81f23d98fba433e81c1a21040407e9bfa95c6c9407c0d5c5be9e04e98810ea8f"
+      url "https://github.com/matcra587/github-docs-mcp/releases/download/v0.2.2/github-docs-mcp_0.2.2_linux_arm64.tar.gz"
+      sha256 "6a2ead3d8bed4971ede60e4d34ce3c3d34dc9d5d342dc5bf1f2966e031b2639c"
     end
   end
 
