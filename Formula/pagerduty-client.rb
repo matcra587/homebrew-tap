@@ -15,19 +15,19 @@ class PagerdutyClient < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/matcra587/pagerduty-client/releases/download/v0.13.5/pagerduty-client_0.13.5_darwin_arm64.tar.gz"
-      sha256 "dd1b5b5afb1dcc569372b68c95fc7a6d283d4fa0f742beb7c31889660af1a88b"
+      url "https://github.com/matcra587/pagerduty-client/releases/download/v0.13.6/pagerduty-client_0.13.6_darwin_arm64.tar.gz"
+      sha256 "14e02e20ab8024cdc7491cb3eb5e29c3d885666ded5b3811431f4eaafc249635"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/matcra587/pagerduty-client/releases/download/v0.13.5/pagerduty-client_0.13.5_linux_amd64.tar.gz"
-      sha256 "2b43fd2afe7b49f7040764b4d7c7d499e8eb866c383f8dc420dacf2988be61ac"
+      url "https://github.com/matcra587/pagerduty-client/releases/download/v0.13.6/pagerduty-client_0.13.6_linux_amd64.tar.gz"
+      sha256 "de068876b49c749ed36c8d7bc0cea44108a55f5894b690f5b01c1c0ca9e748c2"
     end
     on_arm do
-      url "https://github.com/matcra587/pagerduty-client/releases/download/v0.13.5/pagerduty-client_0.13.5_linux_arm64.tar.gz"
-      sha256 "2ae91e8c0387d2d47c7bf46da740c6692dd62a4a66a1009d3d5874811f355978"
+      url "https://github.com/matcra587/pagerduty-client/releases/download/v0.13.6/pagerduty-client_0.13.6_linux_arm64.tar.gz"
+      sha256 "7084349876af4b24f7e88c5674d4fdf8fac97b78b85dfd588997ac92e5661511"
     end
   end
 
