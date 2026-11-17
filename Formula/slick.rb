@@ -15,19 +15,19 @@ class Slick < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/matcra587/slack-cli/releases/download/v0.5.9/slick_0.5.9_darwin_arm64.tar.gz"
-      sha256 "e3f174d1418bae6dc83c1bf7d8f61f461d0029fee626ac9b7ccf287683ce6e81"
+      url "https://github.com/matcra587/slack-cli/releases/download/v0.6.0/slick_0.6.0_darwin_arm64.tar.gz"
+      sha256 "e0f7371293c276c76f32c2d8475d76586d32cc62cc22a959d616db2e0c648f17"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/matcra587/slack-cli/releases/download/v0.5.9/slick_0.5.9_linux_amd64.tar.gz"
-      sha256 "7c232d3fb12bc0950d3aeeb2db78f5e35403f8c156018e5c7f8fc4d28094e87d"
+      url "https://github.com/matcra587/slack-cli/releases/download/v0.6.0/slick_0.6.0_linux_amd64.tar.gz"
+      sha256 "eff072c9c2c68a1b0db0cb9021645dce5a9a64f60055894321ebd8636b7aad8f"
     end
     on_arm do
-      url "https://github.com/matcra587/slack-cli/releases/download/v0.5.9/slick_0.5.9_linux_arm64.tar.gz"
-      sha256 "36c86d976c758446b8f63408d2e2258794e96fb264f36f08eecd6ce7f7a3fd0e"
+      url "https://github.com/matcra587/slack-cli/releases/download/v0.6.0/slick_0.6.0_linux_arm64.tar.gz"
+      sha256 "8dfe0e935df506fc73ca11e22acf38421e65a9139b8ba3ec037c788a4804408a"
     end
   end
 
