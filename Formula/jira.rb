@@ -15,19 +15,19 @@ class Jira < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/matcra587/jira-cli/releases/download/v0.16.0/jira_0.16.0_darwin_arm64.tar.gz"
-      sha256 "701acc33ab4aea1a5142478d8aff01d2590b467fef06a4288e1269b623055b6b"
+      url "https://github.com/matcra587/jira-cli/releases/download/v0.16.1/jira_0.16.1_darwin_arm64.tar.gz"
+      sha256 "ef351c1bd63293e954384a4f2f891b6ccd2b692ecd89e73ea105bc957a88ad6c"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/matcra587/jira-cli/releases/download/v0.16.0/jira_0.16.0_linux_amd64.tar.gz"
-      sha256 "102e8370fbd77c4309275418e78b1c04722a07d20c1546b32d8e9a6ba735fd1e"
+      url "https://github.com/matcra587/jira-cli/releases/download/v0.16.1/jira_0.16.1_linux_amd64.tar.gz"
+      sha256 "4973aa6369fffae6340c99e47a1c3d441319a825e0aa30ccb390d49cf3857e37"
     end
     on_arm do
-      url "https://github.com/matcra587/jira-cli/releases/download/v0.16.0/jira_0.16.0_linux_arm64.tar.gz"
-      sha256 "893d0021a04773072eb219ae1800fa1bba76b66fd5d7fcccee9b6a5979a7bcce"
+      url "https://github.com/matcra587/jira-cli/releases/download/v0.16.1/jira_0.16.1_linux_arm64.tar.gz"
+      sha256 "cf9401e8d98cecedbfaaa440466e92e9435c33c2d25257f6e5dc36c05ca34e7d"
     end
   end
 
